@@ -30,34 +30,73 @@
     <section class="page guide-page" id="shop-card" aria-labelledby="shop-title" hidden>
       <button class="back-button" type="button" data-page="home">← メニューへ戻る</button><p class="eyebrow">01 / SHOP CARD</p>
       <h2 id="shop-title">ショップカードの運用</h2><p class="lead">ご来店の楽しみが次につながる、LINE上のポイントカードです。</p>
-      <div class="guide-block"><h3>基本の流れ</h3><ol class="steps">
-        <li><b>お客様にカードを表示いただく</b><span>トーク画面またはリッチメニューからショップカードを開きます。</span></li>
-        <li><b>店頭QRコードを読み取っていただく</b><span>会計時にポイント付与用QRコードをご案内します。</span></li>
-        <li><b>ポイント反映を一緒に確認する</b><span>獲得ポイントが表示されたことを確認して完了です。</span></li>
-      </ol></div><div class="tip"><strong>接客のひとこと</strong><p>「LINEのショップカードにポイントが貯まります。よろしければこちらを読み取ってください。」</p></div>
-      <div class="operation-guide">
-        <p class="section-label">FOR STORE STAFF</p>
-        <h3>店舗スマホでポイントを付与する</h3>
-        <p class="section-intro">店舗側がポイントを直接入力する操作ではありません。店舗スマホにポイント付与用QRコードを表示し、お客様自身のLINEで読み取っていただきます。</p>
-        <ol class="steps staff-steps">
-          <li><b>店舗スマホを準備する</b><span>通信状態を確認し、最新版の「LINE公式アカウント」管理アプリを開きます。THE WINE BASEを管理できるアカウントでログインし、対象アカウントを選びます。</span></li>
-          <li><b>ショップカードを開く</b><span>管理アプリの［ホーム］から［ショップカード］を開きます。公開中の対象カードであることを確認してください。</span></li>
-          <li><b>ポイント付与用QRコードを表示する</b><span>ショップカードメニューから［スマートフォンにQRコードを表示］を選び、今回付与するポイント数・条件を確認してQRコードを表示します。</span></li>
-          <li><b>お客様に読み取っていただく</b><span>お客様のLINEでショップカードを開き、［QRコードをスキャン］から店舗スマホのQRコードを読み取っていただきます。</span></li>
-          <li><b>取得結果を一緒に確認する</b><span>お客様の画面にポイント獲得結果が表示され、カードのポイント数が増えたことを確認します。店舗側は必要に応じて［ポイント付与履歴］も確認します。</span></li>
-          <li><b>付与できないとき</b><span>通信状態、対象カード、カードの公開状態、QRコードの有効性、当日の取得制限を順に確認します。ワンタイムQRコードは再利用・印刷せず、必要なら新しいQRコードを表示します。</span></li>
-        </ol>
-        <div class="operation-plan">
-          <strong>THE WINE BASE 運用予定</strong>
-          <ul>
-            <li>トレーニングカード：3ポイントでランクアップ</li>
-            <li>通常運用カード：ポイント付与は1日1回まで</li>
-            <li>通常運用カード：3ポイント単位で特典、15ポイントで満了</li>
-          </ul>
-          <p>※管理画面の実設定は未確認です。運用開始前に、公開中カードの設定値と付与QRコードの条件を管理者が照合してください。</p>
-        </div>
-        <p class="source-note">操作根拠：<a href="https://www.lycbiz.com/jp/manual/OfficialAccountManager/app/reward-cards/create/" target="_blank" rel="noopener noreferrer">LINEヤフー for Business「ショップカード」公式マニュアル</a></p>
+      <nav class="shop-category-selector" aria-label="ショップカードの操作分類">
+        <button type="button" class="shop-category-button" data-shop-category="customer" aria-pressed="true"><span>A</span>お客様の操作</button>
+        <button type="button" class="shop-category-button" data-shop-category="staff" aria-pressed="false"><span>B</span>店舗スタッフの操作</button>
+        <button type="button" class="shop-category-button" data-shop-category="management" aria-pressed="false"><span>C</span>カードの管理</button>
+        <button type="button" class="shop-category-button" data-shop-category="trouble" aria-pressed="false"><span>D</span>困ったとき</button>
+      </nav>
+
+      <div class="shop-category-panels">
+        <section class="shop-category-panel" data-shop-panel="customer" aria-labelledby="shop-category-customer">
+          <p class="section-label">FOR CUSTOMERS</p><h3 id="shop-category-customer">お客様の操作</h3>
+          <ol class="shop-operation-list">
+            <li><b>ショップカードを開く</b><span>LINEのトーク画面またはリッチメニューからショップカードを開きます。</span></li>
+            <li><b>ポイント付与QRコードを読み取る</b><span>ショップカードの［QRコードをスキャン］を選び、店舗スマホに表示されたポイント付与用QRコードを読み取ります。</span></li>
+            <li><b>取得ポイントを確認する</b><span>ポイント獲得結果が表示され、ショップカードのポイント数が増えたことを確認します。</span></li>
+            <li><b>特典を利用する</b><span>必要ポイントに達すると表示される特典チケットを店舗スタッフに提示します。店舗での最終操作は、チケットの内容と有効期限を確認してから行います。</span></li>
+          </ol>
+        </section>
+
+        <section class="shop-category-panel" data-shop-panel="staff" aria-labelledby="shop-category-staff" hidden>
+          <p class="section-label">FOR STORE STAFF</p><h3 id="shop-category-staff">店舗スタッフの操作</h3>
+          <p class="section-intro">店舗側がポイントを直接入力する操作ではありません。店舗スマホにポイント付与用QRコードを表示し、お客様自身のLINEで読み取っていただきます。</p>
+          <ol class="shop-operation-list">
+            <li><b>店舗スマホを準備する</b><span>通信状態を確認し、最新版の「LINE公式アカウント」管理アプリを開きます。THE WINE BASEを管理できるアカウントでログインし、対象アカウントを選びます。</span></li>
+            <li><b>ポイント付与用QRコードを表示する</b><span>管理アプリの［ホーム］→［ショップカード］を開き、メニューから［スマートフォンにQRコードを表示］を選びます。今回付与するポイント数・条件を確認して表示します。</span></li>
+            <li><b>お客様にQRコードを提示する</b><span>お客様のLINEでショップカードを開き、［QRコードをスキャン］から店舗スマホのQRコードを読み取っていただきます。</span></li>
+            <li><b>ポイント反映を確認する</b><span>お客様の画面にポイント獲得結果が表示され、ポイント数が増えたことを一緒に確認します。必要に応じて管理側の［ポイント付与履歴］も確認します。</span></li>
+            <li><b>特典の利用に対応する</b><span>お客様が提示した特典チケットの内容と有効期限を確認します。利用済みにする具体的な店舗操作は、現在の管理画面で確認してください。<strong class="verify-badge">要確認</strong></span></li>
+          </ol>
+          <details class="tip"><summary>接客のひとこと</summary><p>「LINEのショップカードにポイントが貯まります。よろしければこちらを読み取ってください。」</p></details>
+        </section>
+
+        <section class="shop-category-panel" data-shop-panel="management" aria-labelledby="shop-category-management" hidden>
+          <p class="section-label">FOR ADMINISTRATORS</p><h3 id="shop-category-management">カードの管理</h3>
+          <ol class="shop-operation-list">
+            <li><b>ショップカードを新規作成する</b><span>管理アプリの［ホーム］→［ショップカード］→［ショップカード設定］で必要項目を入力し、下書き保存または公開します。</span></li>
+            <li><b>特典チケットを追加・設定する</b><span>ショップカード作成画面のゴール特典から［特典チケットを作成］を選び、特典内容と有効期限などを設定して保存します。</span></li>
+            <li><b>ランクアップカードを設定する</b><span>ショップカード作成後に［ランクアップカードを作成］を選び、ランクアップ条件とカード内容を設定して保存します。</span></li>
+            <li><b>ポイント付与用QRコードを設定する</b><span>ショップカードのメニューから付与ポイント数や読み取り期限を設定します。印刷用QRコードとスマートフォン表示用のワンタイムQRコードを用途に合わせて使い分けます。</span></li>
+            <li><b>ショップカードを公開する</b><span>設定内容を確認して［保存してカードを公開］を選びます。公開前に、特典・有効期限・ポイント付与条件を必ず照合します。</span></li>
+            <li><b>カードの設定・利用履歴を確認する</b><span>ショップカードの設定画面と［ポイント付与履歴］を確認します。集計値は管理画面の［分析］→［ショップカード］でも確認できます。</span></li>
+            <li><b>ショップカードの公開を停止する</b><span>［ショップカード］→［設定］から公開停止を行います。公開停止は元に戻せず、お客様の保有ポイントを含むカード情報が削除されます。実行前に必ず管理者が影響を確認してください。</span></li>
+            <li><b>カードの削除方法・可否を確認する</b><span>ショップカード単体の「削除」は公式資料で確認できていません。「公開停止」とは別の操作として扱い、現在の管理画面と公式サポートで可否を確認してください。<strong class="verify-badge">要確認</strong></span></li>
+          </ol>
+          <details class="operation-plan">
+            <summary>THE WINE BASE 運用予定</summary>
+            <ul>
+              <li>トレーニングカード：3ポイントでランクアップ</li>
+              <li>通常運用カード：ポイント付与は1日1回まで</li>
+              <li>通常運用カード：3ポイント単位で特典、15ポイントで満了</li>
+            </ul>
+            <p>※管理画面の実設定は未確認です。運用開始前に、公開中カードの設定値と付与QRコードの条件を管理者が照合してください。</p>
+          </details>
+        </section>
+
+        <section class="shop-category-panel" data-shop-panel="trouble" aria-labelledby="shop-category-trouble" hidden>
+          <p class="section-label">TROUBLESHOOTING</p><h3 id="shop-category-trouble">困ったとき</h3>
+          <ol class="shop-operation-list">
+            <li><b>QRコードが読み取れない</b><span>店舗スマホの画面の明るさ、通信状態、カメラの汚れ、QRコードの読み取り期限を確認します。ワンタイムQRコードは再利用・印刷せず、新しいQRコードを表示します。</span></li>
+            <li><b>ポイントが付与されない</b><span>対象カード、カードの公開状態、通信状態、QRコードの有効性、当日の取得制限を順に確認します。二重付与を避けるため、再試行前にお客様のカードと［ポイント付与履歴］を確認します。</span></li>
+            <li><b>誤ってポイントを付与した</b><span>まず［ポイント付与履歴］で対象日時と付与内容を確認し、管理者へ連絡します。取り消し・調整方法は公式資料で確認できていないため、自己判断で追加操作をしないでください。<strong class="verify-badge">要確認</strong></span></li>
+            <li><b>特典が表示されない</b><span>お客様のポイント数が必要数に達しているか、対象のショップカードを開いているかを確認します。管理側では特典チケットの設定と有効期限を確認してください。</span></li>
+            <li><b>カードが見つからない</b><span>THE WINE BASE公式LINEのトーク画面とリッチメニューを確認します。表示経路や案内リンクが見つからない場合は、管理者に現在の公開設定を確認してください。<strong class="verify-badge">要確認</strong></span></li>
+            <li><b>店舗スマホで管理できない</b><span>通信状態、管理アプリの更新、ログイン中のアカウント、選択中の公式アカウントを確認します。改善しない場合は、管理権限の有無を管理者に確認してください。<strong class="verify-badge">要確認</strong></span></li>
+          </ol>
+        </section>
       </div>
+      <p class="source-note shop-source-note">操作根拠：<a href="https://www.lycbiz.com/jp/manual/OfficialAccountManager/app/reward-cards/create/" target="_blank" rel="noopener noreferrer">LINEヤフー for Business「ショップカード」公式マニュアル</a></p>
     </section>
 
     <section class="page guide-page" id="friends" aria-labelledby="friends-title" hidden>
@@ -67,7 +106,19 @@
         <li><b>タイミング</b><span>お会計時や商品をご案内した後に、自然にお声がけします。</span></li>
         <li><b>メリット</b><span>新着ワインやイベント、ショップカードなど受け取れる情報を伝えます。</span></li>
         <li><b>登録確認</b><span>店頭QRコードから登録後、トーク画面が開ければ完了です。</span></li>
-      </ul></div><div class="tip"><strong>接客のひとこと</strong><p>「新着ワインやイベントのお知らせをLINEでお届けしています。よろしければご登録ください。」</p></div>
+      </ul></div><details class="tip"><summary>接客のひとこと</summary><p>「新着ワインやイベントのお知らせをLINEでお届けしています。よろしければご登録ください。」</p></details>
+      <div class="friend-add">
+        <div class="friend-add-copy">
+          <p class="section-label">ADD THE WINE BASE</p>
+          <h3>公式LINEを友だち追加</h3>
+          <p>スマートフォンではボタンをタップしてください。別のスマートフォンから登録する場合は、右のQRコードをLINEのQRコードリーダーで読み取ってください。</p>
+          <a class="line-button" href="https://lin.ee/Ot5ovho" target="_blank" rel="noopener noreferrer">友だち追加画面を開く <span aria-hidden="true">→</span></a>
+          <small>接客時は「こちらから友だち追加をお願いします」とご案内ください。</small>
+        </div>
+        <div class="qr-wrap">
+          <img src="assets/line-friend-qr.jpg" alt="THE WINE BASE公式LINE 友だち追加QRコード" width="540" height="540">
+        </div>
+      </div>
     </section>
 
     <section class="page guide-page" id="messages" aria-labelledby="messages-title" hidden>
@@ -77,7 +128,7 @@
         <li><b>目的は明確か</b><span>新商品、イベント、営業案内など、1配信1テーマに絞ります。</span></li>
         <li><b>情報は正確か</b><span>日時・価格・在庫・リンク先を必ず見直します。</span></li>
         <li><b>スマートフォンで読みやすいか</b><span>文章を短く区切り、テスト配信で見え方を確認します。</span></li>
-      </ul></div><div class="tip"><strong>配信の基本</strong><p>タイトル → 要点 → 詳細 → 来店・予約などの次の行動、の順にまとめると伝わりやすくなります。</p></div>
+      </ul></div><details class="tip"><summary>配信の基本</summary><p>タイトル → 要点 → 詳細 → 来店・予約などの次の行動、の順にまとめると伝わりやすくなります。</p></details>
     </section>
   </main>
   <footer><span>THE WINE BASE</span><small>Internal Use Only</small></footer>
